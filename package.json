@@ -1,0 +1,39 @@
+{
+  "name": "desktop-mascot",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && electron ./dist/main.js",
+    "dist": "npm run build && electron-builder"
+  },
+  "keywords": [],
+  "author": "Denis Klyuev <denis.klyuev@gmail.com>",
+  "license": "unlicensed",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "electron": "^36.4.0",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.8.3"
+  },
+  "build": {
+    "appId": "com.example.borderless",
+    "files": [
+      "dist/**/*",
+      "public/**/*"
+    ],
+    "directories": {
+      "buildResources": "public"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
